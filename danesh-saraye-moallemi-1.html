@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>دانش سرای معلمی | آکادمی امیر</title>
+<meta name="description" content="پکیج‌های تخصصی آمادگی کنکور فرهنگیان و مصاحبه — دانش سرای معلمی آکادمی امیر" />
+<link rel="icon" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-0:#050b18;
+    --navy-1:#0a1428;
+    --navy-2:#0f1e3d;
+    --navy-3:#142a52;
+    --gold-1:#f5e6a3;
+    --gold-2:#d4af37;
+    --gold-3:#b8860b;
+    --gold-glow:rgba(212,175,55,.45);
+    --cream:#f5f0e1;
+    --txt:#ece5d0;
+    --muted:#8a8fa8;
+    --card:rgba(212,175,55,.055);
+    --card-border:rgba(212,175,55,.16);
+    --green:#22e6a6;
+    --red:#ff5577;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Vazirmatn',sans-serif;background:var(--navy-0);color:var(--txt);overflow-x:hidden;line-height:1.9;-webkit-font-smoothing:antialiased}
+
+  .bg-wrap{position:fixed;inset:0;z-index:-2;overflow:hidden}
+  .orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.5;animation:float 24s ease-in-out infinite}
+  .orb1{width:560px;height:560px;background:radial-gradient(circle,#142a52,transparent 70%);top:-160px;right:-140px}
+  .orb2{width:500px;height:500px;background:radial-gradient(circle,#b8860b,transparent 70%);top:38%;left:-180px;animation-delay:-6s;opacity:.28}
+  .orb3{width:540px;height:540px;background:radial-gradient(circle,#0f1e3d,transparent 70%);bottom:-200px;right:18%;animation-delay:-12s}
+  .orb4{width:400px;height:400px;background:radial-gradient(circle,#d4af37,transparent 70%);top:65%;right:-100px;animation-delay:-3s;opacity:.16}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-60px) scale(1.12)}66%{transform:translate(-40px,40px) scale(.94)}}
+  .bg-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(212,175,55,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.035) 1px,transparent 1px);background-size:70px 70px;mask-image:radial-gradient(ellipse at center,#000 25%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse at center,#000 25%,transparent 78%)}
+
+  nav{position:fixed;top:0;right:0;left:0;z-index:100;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(5,11,24,.65);border-bottom:1px solid rgba(212,175,55,.12);transition:.3s}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.1rem}
+  .logo-badge{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#142a52,#0a1428);border:1.5px solid rgba(212,175,55,.35);display:grid;place-items:center;overflow:hidden;box-shadow:0 8px 30px rgba(212,175,55,.22)}
+  .logo-badge img{width:100%;height:100%;object-fit:cover}
+  .logo-badge .fb{font-size:1.4rem}
+  .logo small{display:block;font-size:.68rem;font-weight:400;color:var(--gold-2);line-height:1.2;letter-spacing:.5px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:.25s;position:relative}
+  .nav-links a:hover{color:var(--gold-1)}
+  .nav-links a::after{content:'';position:absolute;bottom:-6px;right:0;width:0;height:2px;background:linear-gradient(90deg,var(--gold-3),var(--gold-1));transition:.3s;border-radius:2px}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));color:#0a1428!important;padding:10px 22px;border-radius:12px;font-weight:700;box-shadow:0 8px 26px var(--gold-glow)}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 34px var(--gold-glow);color:#0a1428!important}
+  .nav-cta::after{display:none}
+  @media(max-width:820px){.nav-links a:not(.nav-cta){display:none}nav{padding:14px 20px}}
+
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:150px 24px 90px;position:relative}
+  .hero-logo{width:130px;height:130px;border-radius:50%;background:linear-gradient(145deg,#142a52,#0a1428);border:2px solid rgba(212,175,55,.5);display:grid;place-items:center;margin-bottom:26px;box-shadow:0 20px 60px rgba(212,175,55,.35),0 0 0 10px rgba(212,175,55,.06);animation:fadeUp .9s both;overflow:hidden}
+  .hero-logo img{width:100%;height:100%;object-fit:cover}
+  .hero-logo .fb{font-size:3.6rem}
+
+  .pill{display:inline-flex;align-items:center;gap:9px;padding:8px 20px;border-radius:100px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.32);font-size:.84rem;color:var(--gold-1);font-weight:500;margin-bottom:26px;animation:fadeUp .9s .1s both}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+
+  .hero h1{font-size:clamp(2.2rem,6.5vw,4.8rem);font-weight:900;line-height:1.28;letter-spacing:-1px;margin-bottom:20px;animation:fadeUp .9s .2s both;color:var(--cream)}
+  .grad{background:linear-gradient(110deg,#f5e6a3 10%,#d4af37 35%,#f5e6a3 55%,#b8860b 80%);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite;filter:drop-shadow(0 4px 24px rgba(212,175,55,.4))}
+  @keyframes shine{to{background-position:300% center}}
+
+  .hero p.sub{font-size:clamp(1rem,1.9vw,1.18rem);color:var(--muted);max-width:660px;margin-bottom:40px;animation:fadeUp .9s .3s both;line-height:1.95}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;animation:fadeUp .9s .4s both}
+
+  .btn{padding:15px 32px;border-radius:15px;font-family:inherit;font-size:.98rem;font-weight:700;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:.3s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+  .btn-primary{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));color:#0a1428;box-shadow:0 12px 38px var(--gold-glow)}
+  .btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(212,175,55,.65);filter:brightness(1.08)}
+  .btn-ghost{background:rgba(212,175,55,.06);color:var(--gold-1);border:1px solid rgba(212,175,55,.3)}
+  .btn-ghost:hover{background:rgba(212,175,55,.14);border-color:rgba(212,175,55,.6);transform:translateY(-4px)}
+
+  .stats{display:flex;gap:52px;flex-wrap:wrap;justify-content:center;margin-top:64px;animation:fadeUp .9s .55s both}
+  .stat{text-align:center;position:relative}
+  .stat:not(:last-child)::after{content:'';position:absolute;left:-26px;top:20%;height:60%;width:1px;background:linear-gradient(transparent,rgba(212,175,55,.3),transparent)}
+  .stat .num{font-size:2.1rem;font-weight:900;background:linear-gradient(135deg,#f5e6a3,#b8860b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .lbl{font-size:.8rem;color:var(--muted);margin-top:2px}
+  @media(max-width:520px){.stats{gap:30px}.stat:not(:last-child)::after{display:none}}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+  .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:26px;height:44px;border:2px solid rgba(212,175,55,.35);border-radius:14px}
+  .scroll-hint::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:4px;height:8px;border-radius:2px;background:var(--gold-2);animation:scrolldot 1.8s infinite}
+  @keyframes scrolldot{0%{opacity:0;top:8px}30%{opacity:1}100%{opacity:0;top:26px}}
+
+  section{padding:100px 24px;position:relative;max-width:1250px;margin:0 auto}
+  .sec-head{text-align:center;margin-bottom:58px}
+  .sec-tag{display:inline-flex;align-items:center;gap:9px;font-size:.75rem;font-weight:700;letter-spacing:2.5px;color:var(--gold-2);text-transform:uppercase;margin-bottom:14px}
+  .sec-tag::before,.sec-tag::after{content:'';width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-2))}
+  .sec-tag::after{background:linear-gradient(90deg,var(--gold-2),transparent)}
+  .sec-head h2{font-size:clamp(1.7rem,4.2vw,2.85rem);font-weight:900;line-height:1.35;margin-bottom:14px;color:var(--cream)}
+  .sec-head h2 .g{background:linear-gradient(135deg,#f5e6a3,#d4af37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sec-head p{color:var(--muted);max-width:600px;margin:0 auto;font-size:.98rem}
+
+  .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:stretch}
+  .card{background:linear-gradient(165deg,rgba(20,42,82,.4),rgba(10,20,40,.65));border:1px solid var(--card-border);border-radius:26px;padding:36px 28px;position:relative;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:.4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;overflow:hidden}
+  .card::before{content:'';position:absolute;top:0;right:0;left:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.6),transparent);opacity:0;transition:.5s}
+  .card:hover{transform:translateY(-10px);border-color:rgba(212,175,55,.4);box-shadow:0 30px 70px -30px rgba(212,175,55,.4)}
+  .card:hover::before{opacity:1}
+
+  .card.featured{background:linear-gradient(165deg,rgba(212,175,55,.14),rgba(20,42,82,.55),rgba(10,20,40,.7));border:1.5px solid rgba(212,175,55,.55);box-shadow:0 30px 90px -25px var(--gold-glow);transform:scale(1.02)}
+  .card.featured:hover{transform:scale(1.02) translateY(-10px)}
+
+  .badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0a1428;font-size:.72rem;font-weight:800;padding:7px 22px;border-radius:0 0 14px 14px;box-shadow:0 8px 24px var(--gold-glow);letter-spacing:.5px}
+
+  .card-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:20px;background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(20,42,82,.6));border:1px solid rgba(212,175,55,.28);color:var(--gold-1)}
+  .card.featured .card-icon{background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0a1428;box-shadow:0 10px 32px var(--gold-glow);border-color:transparent}
+
+  .card h3{font-size:1.3rem;font-weight:800;margin-bottom:6px;color:var(--cream)}
+  .card .desc{font-size:.84rem;color:var(--muted);margin-bottom:20px;min-height:22px}
+
+  .feat-list{list-style:none;margin-bottom:26px;flex:1}
+  .feat-list li{display:flex;align-items:flex-start;gap:11px;font-size:.89rem;color:#cfd3e5;padding:9px 0;border-bottom:1px dashed rgba(212,175,55,.1)}
+  .feat-list li:last-child{border-bottom:none}
+  .check{flex-shrink:0;width:19px;height:19px;border-radius:50%;background:linear-gradient(135deg,rgba(212,175,55,.35),rgba(184,134,11,.25));border:1px solid rgba(212,175,55,.5);display:grid;place-items:center;font-size:.62rem;color:var(--gold-1);font-weight:900;margin-top:5px}
+  .card.featured .check{background:linear-gradient(135deg,var(--gold-2),var(--gold-3));border-color:transparent;color:#0a1428}
+
+  .price-box{display:flex;align-items:baseline;gap:10px;margin-bottom:18px;padding-top:18px;border-top:1px solid rgba(212,175,55,.14)}
+  .price{font-size:2.15rem;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#f5e6a3,#d4af37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .price small{font-size:.85rem;font-weight:600;color:var(--muted);-webkit-text-fill-color:var(--muted);margin-right:2px}
+  .old-price{font-size:1rem;color:#6b6b85;text-decoration:line-through;font-weight:500}
+  .card .btn{width:100%;justify-content:center}
+
+  .demo-box{background:radial-gradient(circle at 20% 50%,rgba(212,175,55,.14),transparent 60%),radial-gradient(circle at 80% 50%,rgba(20,42,82,.55),transparent 60%),linear-gradient(140deg,rgba(20,42,82,.5),rgba(10,20,40,.7));border:1px solid rgba(212,175,55,.32);border-radius:30px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
+  .demo-box::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.05) 1px,transparent 1px);background-size:34px 34px;opacity:.6}
+  .demo-box::after{content:'🎁';position:absolute;font-size:16rem;opacity:.035;left:-40px;top:-70px;transform:rotate(-18deg)}
+  .demo-box .inner{position:relative;z-index:1}
+  .demo-box .tag{display:inline-block;padding:6px 18px;border-radius:100px;background:rgba(34,230,166,.12);border:1px solid rgba(34,230,166,.35);color:var(--green);font-size:.78rem;font-weight:700;margin-bottom:18px;letter-spacing:1px}
+  .demo-box h3{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:900;margin-bottom:14px;color:var(--cream)}
+  .demo-box h3 .g{background:linear-gradient(135deg,#f5e6a3,#d4af37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .demo-box p{color:#b9bdd0;max-width:620px;margin:0 auto 30px;font-size:.96rem}
+  .demo-box .btn{position:relative;z-index:1}
+
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .feature{background:linear-gradient(165deg,rgba(20,42,82,.35),rgba(10,20,40,.5));border:1px solid rgba(212,175,55,.14);border-radius:20px;padding:26px 22px;transition:.35s}
+  .feature:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.35);background:linear-gradient(165deg,rgba(20,42,82,.5),rgba(10,20,40,.65))}
+  .feature .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;margin-bottom:14px;background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(20,42,82,.6));border:1px solid rgba(212,175,55,.25)}
+  .feature h4{font-size:1rem;font-weight:800;margin-bottom:6px;color:var(--cream)}
+  .feature p{font-size:.84rem;color:var(--muted);line-height:1.85}
+
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+  .review{background:linear-gradient(165deg,rgba(20,42,82,.4),rgba(10,20,40,.6));border:1px solid rgba(212,175,55,.14);border-radius:22px;padding:28px 24px;position:relative;transition:.35s}
+  .review:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.35);box-shadow:0 24px 50px -20px rgba(212,175,55,.3)}
+  .review .quote{position:absolute;top:16px;left:22px;font-size:3.4rem;line-height:1;color:rgba(212,175,55,.16);font-family:Georgia,serif}
+  .stars{display:flex;gap:3px;margin-bottom:14px;color:var(--gold-2);font-size:.95rem}
+  .review p{font-size:.9rem;color:#cfd3e5;line-height:1.95;margin-bottom:20px;position:relative;z-index:1}
+  .review .who{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(212,175,55,.12)}
+  .avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));display:grid;place-items:center;font-size:1.05rem;font-weight:900;color:#0a1428;box-shadow:0 6px 18px rgba(212,175,55,.35)}
+  .who .info .n{font-weight:700;font-size:.9rem;color:var(--cream)}
+  .who .info .r{font-size:.75rem;color:var(--muted);margin-top:1px}
+
+  .support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .support-card{background:linear-gradient(165deg,rgba(20,42,82,.4),rgba(10,20,40,.6));border:1px solid rgba(212,175,55,.16);border-radius:22px;padding:34px 26px;text-align:center;backdrop-filter:blur(14px);transition:.35s;text-decoration:none;color:inherit;display:block}
+  .support-card:hover{transform:translateY(-8px);border-color:rgba(212,175,55,.45);background:linear-gradient(165deg,rgba(212,175,55,.1),rgba(20,42,82,.5))}
+  .support-card .ico{font-size:2.1rem;margin-bottom:14px;display:block}
+  .support-card h4{font-size:1.1rem;font-weight:800;margin-bottom:8px;color:var(--cream)}
+  .support-card p{font-size:.85rem;color:var(--muted);margin-bottom:14px}
+  .support-card .handle{display:inline-block;padding:8px 20px;border-radius:100px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);font-size:.84rem;font-weight:700;color:var(--gold-1);direction:ltr}
+
+  footer{text-align:center;padding:56px 24px 40px;border-top:1px solid rgba(212,175,55,.12);color:var(--muted);font-size:.85rem;position:relative}
+  footer .flogo{font-size:1.35rem;font-weight:900;margin-bottom:8px;background:linear-gradient(135deg,#f5e6a3,#d4af37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  footer .ftag{color:var(--gold-2);font-size:.82rem;margin-bottom:18px;letter-spacing:1px}
+  footer .cert-img{max-width:280px;width:100%;border-radius:14px;border:1px solid rgba(212,175,55,.25);margin:20px auto 18px;display:block;box-shadow:0 20px 50px -20px rgba(212,175,55,.4)}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:.9s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  ::selection{background:var(--gold-2);color:#0a1428}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--navy-0)}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold-3),var(--gold-2));border-radius:10px}
+
+  .float-contact{position:fixed;bottom:26px;right:26px;z-index:99;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));display:grid;place-items:center;font-size:1.5rem;box-shadow:0 12px 34px var(--gold-glow);cursor:pointer;transition:.3s;text-decoration:none;color:#0a1428;animation:pulseGlow 2.8s infinite}
+  .float-contact:hover{transform:scale(1.12) rotate(-8deg)}
+  @keyframes pulseGlow{0%,100%{box-shadow:0 12px 34px var(--gold-glow)}50%{box-shadow:0 12px 44px rgba(212,175,55,.75)}}
+  @media(max-width:520px){.float-contact{bottom:20px;right:20px;width:50px;height:50px;font-size:1.3rem}}
+</style>
+</head>
+<body>
+
+<div class="bg-wrap">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="orb orb4"></div>
+</div>
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="logo">
+    <div class="logo-badge">
+      <img src="logo.png" alt="لوگو" onerror="this.outerHTML='<span class=\'fb\'>🎓</span>'">
+    </div>
+    <div>
+      دانش سرای معلمی
+      <small>آکادمی امیر | AMIR-014-HZ</small>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#pdf-packages">پکیج PDF</a>
+    <a href="#print-packages">پکیج چاپی</a>
+    <a href="#demo">نسخه رایگان</a>
+    <a href="#reviews">نظرات</a>
+    <a href="#pdf-packages" class="nav-cta">🛒 خرید</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-logo">
+    <img src="logo.png" alt="دانش سرای معلمی" onerror="this.outerHTML='<span class=\'fb\'>🎓</span>'">
+  </div>
+
+  <div class="pill"><span class="dot"></span> ثبت‌نام دوره جدید آغاز شد</div>
+
+  <h1>فقط یک قدم مانده<br><span class="grad">تا معلمی</span></h1>
+
+  <p class="sub">
+    مجموعه کامل جزوات کنکور فرهنگیان و مصاحبه — عمومی و تخصصی.
+    با پکیج‌های حرفه‌ای دانش سرای معلمی (آکادمی امیر)، با اطمینان قدم به مسیر معلمی بگذار.
+  </p>
+
+  <div class="hero-cta">
+    <a href="#pdf-packages" class="btn btn-primary">مشاهده پکیج‌ها ←</a>
+    <a href="#demo" class="btn btn-ghost">📄 دانلود نسخه رایگان</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num" data-count="600">۰</div><div class="lbl">سوال و تست با پاسخنامه</div></div>
+    <div class="stat"><div class="num" data-count="5">۰</div><div class="lbl">جزوه تخصصی</div></div>
+    <div class="stat"><div class="num" data-count="98">۰</div><div class="lbl">درصد رضایت</div></div>
+  </div>
+
+  <div class="scroll-hint"></div>
+</header>
+
+<!-- ============================================
+     📄 PDF PACKAGES
+     ترتیب: ۱ → ۲ → VIP
+============================================ -->
+<section id="pdf-packages">
+  <div class="sec-head reveal">
+    <div class="sec-tag">پکیج‌های PDF</div>
+    <h2>دانلود فوری، <span class="g">آماده مطالعه</span></h2>
+    <p>سه پکیج تخصصی برای کنکور فرهنگیان و مصاحبه — انتخاب کن و همان لحظه تحویل بگیر.</p>
+  </div>
+
+  <div class="pricing">
+
+    <!-- PDF 1 — رتبه ۱ -->
+    <div class="card reveal">
+      <div class="card-icon">📘</div>
+      <h3>پکیج PDF اول</h3>
+      <div class="desc">تمرکز روی مصاحبه عمومی</div>
+      <ul class="feat-list">
+        <li><span class="check">✓</span> جزوه ۱ — کنکور فرهنگیان</li>
+        <li><span class="check">✓</span> جزوه ۲ — راهنمای مصاحبه عمومی</li>
+        <li><span class="check">✓</span> جزوه ۴ — سوالات مصاحبه عمومی</li>
+      </ul>
+      <div class="price-box">
+        <span class="price">۳۵۰ <small>هزار تومان</small></span>
+      </div>
+      <a href="#support" class="btn btn-ghost">🛒 سفارش پکیج اول</a>
+    </div>
+
+    <!-- PDF 2 — رتبه ۲ -->
+    <div class="card reveal">
+      <div class="card-icon">📗</div>
+      <h3>پکیج PDF دوم</h3>
+      <div class="desc">تمرکز روی مصاحبه تخصصی</div>
+      <ul class="feat-list">
+        <li><span class="check">✓</span> جزوه ۱ — کنکور فرهنگیان</li>
+        <li><span class="check">✓</span> جزوه ۳ — راهنمای مصاحبه تخصصی</li>
+        <li><span class="check">✓</span> جزوه ۵ — سوالات مصاحبه تخصصی</li>
+      </ul>
+      <div class="price-box">
+        <span class="price">۳۵۰ <small>هزار تومان</small></span>
+      </div>
+      <a href="#support" class="btn btn-ghost">🛒 سفارش پکیج دوم</a>
+    </div>
+
+    <!-- PDF VIP — رتبه ۳ -->
+    <div class="card featured reveal">
+      <div class="badge">⭐ پرفروش‌ترین | VIP</div>
+      <div class="card-icon">👑</div>
+      <h3>پکیج کامل VIP</h3>
+      <div class="desc">هر پنج جزوه — کامل‌ترین انتخاب</div>
+      <ul class="feat-list">
+        <li><span class="check">✓</span> جزوه ۱ — کنکور فرهنگیان</li>
+        <li><span class="check">✓</span> جزوه ۲ — راهنمای مصاحبه عمومی</li>
+        <li><span class="check">✓</span> جزوه ۳ — راهنمای مصاحبه تخصصی</li>
+        <li><span class="check">✓</span> جزوه ۴ — سوالات مصاحبه عمومی</li>
+        <li><span class="check">✓</span> جزوه ۵ — سوالات مصاحبه تخصصی</li>
+      </ul>
+      <div class="price-box">
+        <span class="old-price">۷۰۰</span>
+        <span class="price">۴۰۰ <small>هزار تومان</small></span>
+      </div>
+      <a href="#support" class="btn btn-primary">🛒 سفارش VIP ←</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     📚 PRINT PACKAGES
+     ترتیب: ۱ → ۲ → VIP
+============================================ -->
+<section id="print-packages" style="padding-top:20px">
+  <div class="sec-head reveal">
+    <div class="sec-tag">پکیج‌های چاپی</div>
+    <h2>نسخه فیزیکی، <span class="g">به دستت می‌رسد</span></h2>
+    <p>جزوات چاپ‌شده و صحافی‌شده با کیفیت بالا — برای کسانی که طعم کاغذ را دوست دارند.</p>
+  </div>
+
+  <div class="pricing">
+
+    <!-- Print 1 — رتبه ۱ -->
+    <div class="card reveal">
+      <div class="card-icon">📙</div>
+      <h3>پکیج چاپی اول</h3>
+      <div class="desc">مصاحبه عمومی — نسخه فیزیکی</div>
+      <ul class="feat-list">
+        <li><span class="check">✓</span> جزوه ۱ — کنکور فرهنگیان</li>
+        <li><span class="check">✓</span> جزوه ۲ — راهنمای مصاحبه عمومی</li>
+        <li><span class="check">✓</span> جزوه ۴ — سوالات مصاحبه عمومی</li>
+      </ul>
+      <div class="price-box">
+        <span class="price">۱,۷۰۰,۰۰۰ <small>تومان</small></span>
+      </div>
+      <a href="#support" class="btn btn-ghost">🛒 سفارش پکیج چاپی</a>
+    </div>
+
+    <!-- Print 2 — رتبه ۲ -->
+    <div class="card reveal">
+      <div class="card-icon">📕</div>
+      <h3>پکیج چاپی دوم</h3>
+      <div class="desc">مصاحبه تخصصی — نسخه فیزیکی</div>
+      <ul class="feat-list">
+        <li><span class="check">✓</span> جزوه ۱ — کنکور فرهنگیان</li>
+        <li><span class="check">✓</span> جزوه ۳ — راهنمای مصاحبه تخصصی</li>
+        <li><span class="check">✓</span> جزوه ۵ — سوالات مصاحبه تخصصی</li>
+      </ul>
+      <div class="price-box">
+        <span class="price">۱,۴۰۰,۰۰۰ <small>تومان</small></span>
+      </div>
+      <a href="#support" class="btn btn-ghost">🛒 سفارش پکیج چاپی</a>
+    </div>
+
+    <!-- Print VIP — رتبه ۳ -->
+    <div class="card featured reveal">
+      <div class="badge">👑 کامل‌ترین نسخه چاپی</div>
+      <div class="card-icon">🏆</div>
+      <h3>پکیج چاپی کامل VIP</h3>
+      <div class="desc">هر پنج جزوه، چاپ و صحافی حرفه‌ای</div>
+      <ul class="feat-list">
+        <li><span class="check">✓</span> جزوه ۱ — کنکور فرهنگیان</li>
+        <li><span class="check">✓</span> جزوه ۲ — راهنمای مصاحبه عمومی</li>
+        <li><span class="check">✓</span> جزوه ۳ — راهنمای مصاحبه تخصصی</li>
+        <li><span class="check">✓</span> جزوه ۴ — سوالات مصاحبه عمومی</li>
+        <li><span class="check">✓</span> جزوه ۵ — سوالات مصاحبه تخصصی</li>
+      </ul>
+      <div class="price-box">
+        <span class="old-price">۳,۱۰۰,۰۰۰</span>
+        <span class="price">۲,۷۰۰,۰۰۰ <small>تومان</small></span>
+      </div>
+      <a href="#support" class="btn btn-primary">🛒 سفارش VIP چاپی ←</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     🎁 DEMO
+============================================ -->
+<section id="demo">
+  <div class="demo-box reveal">
+    <div class="inner">
+      <span class="tag">🎁 ۱۰۰٪ رایگان</span>
+      <h3>قبل از خرید، <span class="g">دمو را ببین</span></h3>
+      <p>
+        نمونه واقعی از هر پنج جزوه را دانلود کن. سبک نوشتن، عمق مطالب و شکل پاسخ‌ها را خودت بررسی کن —
+        بعد با اطمینان کامل تصمیم بگیر.
+      </p>
+      <!-- 🎯 لینک PDF دمو رو در CONFIG بذار -->
+      <a href="#" class="btn btn-primary" onclick="downloadDemo(event)">📄 دانلود نسخه دمو (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ⭐ FEATURES
+============================================ -->
+<section>
+  <div class="sec-head reveal">
+    <div class="sec-tag">چرا دانش سرای معلمی؟</div>
+    <h2>انتخاب <span class="g">حرفه‌ای‌ها</span></h2>
+    <p>چیزهایی که ما را از بقیه متمایز می‌کند.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature reveal">
+      <div class="ico">📚</div>
+      <h4>محتوای کامل و به‌روز</h4>
+      <p>بر اساس آخرین تغییرات کنکور فرهنگیان و منابع معتبر.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="ico">🎯</div>
+      <h4>هدف‌مند و دقیق</h4>
+      <p>بدون حاشیه، فقط چیزی که برای قبولی نیاز داری.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="ico">⚡</div>
+      <h4>تحویل فوری</h4>
+      <p>بعد از تأیید پرداخت، بلافاصله فایل‌ها برایت ارسال می‌شود.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="ico">💬</div>
+      <h4>پشتیبانی مستقیم</h4>
+      <p>در تمام مسیر کنارت هستیم؛ هر سوالی داشتی بپرس.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     💬 REVIEWS
+============================================ -->
+<section id="reviews">
+  <div class="sec-head reveal">
+    <div class="sec-tag">نظرات داوطلبان</div>
+    <h2>داستان <span class="g">موفقیت‌شون</span></h2>
+    <p>صدها نفر با دانش سرای معلمی به هدفشون رسیدن. این‌ها چند نمونه‌ست.</p>
+  </div>
+
+  <div class="reviews">
+
+    <div class="review reveal">
+      <div class="quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p>واقعاً محشر بود! جزوه‌های مصاحبه خیلی کامل و دقیق بودن. تونستم با اعتماد به نفس کامل توی مصاحبه شرکت کنم و قبول شم. دستتون درد نکنه 🌹</p>
+      <div class="who">
+        <div class="avatar">ز</div>
+        <div class="info">
+          <div class="n">زهرا محمدی</div>
+          <div class="r">قبولی فرهنگیان — دانشگاه اصفهان</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review reveal">
+      <div class="quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p>بهترین پکیجی بود که تا حالا خریدم. از لحظه خرید تا رسیدن فایل‌ها فقط چند دقیقه طول کشید. کیفیت مطالب هم فوق‌العاده بالاست. خیلی راضی‌ام!</p>
+      <div class="who">
+        <div class="avatar">ع</div>
+        <div class="info">
+          <div class="n">علی رضایی</div>
+          <div class="r">قبولی فرهنگیان — دانشگاه تهران</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review reveal">
+      <div class="quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p>پشتیبانی فوق‌العاده سریع و مهربون. هر سوالی داشتم بلافاصله جواب گرفتم. پکیج VIP رو گرفتم و اصلاً پشیمون نیستم. به همه دوستام معرفی کردم.</p>
+      <div class="who">
+        <div class="avatar">ف</div>
+        <div class="info">
+          <div class="n">فاطمه کریمی</div>
+          <div class="r">قبولی فرهنگیان — دانشگاه شیراز</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review reveal">
+      <div class="quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p>جزوه سوالات مصاحبه تخصصی خیلی کمکم کرد. سوال‌ها دقیقاً همون چیزی بود که توی مصاحبه پرسیدن! انگار از قبل جواب‌ها آماده بودم. ممنون از تیم حرفه‌ای‌تون 🙏</p>
+      <div class="who">
+        <div class="avatar">م</div>
+        <div class="info">
+          <div class="n">محمد حسینی</div>
+          <div class="r">قبولی فرهنگیان — دانشگاه مشهد</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review reveal">
+      <div class="quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p>من نسخه چاپی رو گرفتم و کیفیت چاپ و صحافی واقعاً عالی بود. من که با کاغذ راحت‌ترم، خیلی از این انتخابم راضی‌ام. ارزشش رو داشت.</p>
+      <div class="who">
+        <div class="avatar">ن</div>
+        <div class="info">
+          <div class="n">نرگس احمدی</div>
+          <div class="r">قبولی فرهنگیان — دانشگاه تبریز</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review reveal">
+      <div class="quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p>من دمو رو دانلود کردم و وقتی کیفیتش رو دیدم، بلافاصله پکیج کامل رو خریدم. واقعاً بهترین سرمایه‌گذاری برای آینده‌ام بود. به همه توصیه می‌کنم.</p>
+      <div class="who">
+        <div class="avatar">ر</div>
+        <div class="info">
+          <div class="n">رضا صادقی</div>
+          <div class="r">قبولی فرهنگیان — دانشگاه یزد</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     📞 SUPPORT
+============================================ -->
+<section id="support">
+  <div class="sec-head reveal">
+    <div class="sec-tag">پشتیبانی و سفارش</div>
+    <h2>با ما در <span class="g">ارتباط باش</span></h2>
+    <p>برای ثبت سفارش، داخل یکی از راه‌های ارتباطی زیر پیام بدهید و اطلاعات زیر را ارسال کنید.</p>
+  </div>
+
+  <div class="order-guide reveal" style="max-width:720px;margin:0 auto 36px;background:linear-gradient(165deg,rgba(212,175,55,.12),rgba(20,42,82,.45));border:1px solid rgba(212,175,55,.35);border-radius:24px;padding:28px 26px;">
+    <h3 style="font-size:1.15rem;font-weight:800;color:var(--cream);margin-bottom:14px;text-align:center;">📋 اطلاعات لازم برای ثبت سفارش</h3>
+    <ol style="list-style:none;padding:0;margin:0;display:grid;gap:12px;">
+      <li style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.22);border:1px solid rgba(212,175,55,.18);border-radius:14px;padding:14px 16px;">
+        <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0a1428;display:grid;place-items:center;font-weight:900;font-size:.85rem;">۱</span>
+        <div>
+          <div style="font-weight:700;color:var(--cream);">نام و نام خانوادگی</div>
+        </div>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.22);border:1px solid rgba(212,175,55,.18);border-radius:14px;padding:14px 16px;">
+        <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0a1428;display:grid;place-items:center;font-weight:900;font-size:.85rem;">۲</span>
+        <div>
+          <div style="font-weight:700;color:var(--cream);">شماره تماس</div>
+        </div>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.22);border:1px solid rgba(212,175,55,.18);border-radius:14px;padding:14px 16px;">
+        <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0a1428;display:grid;place-items:center;font-weight:900;font-size:.85rem;">۳</span>
+        <div>
+          <div style="font-weight:700;color:var(--cream);">نام محصول مورد نظر یا یک اسکرین‌شات از آن</div>
+        </div>
+      </li>
+    </ol>
+    <p style="text-align:center;margin-top:18px;color:var(--muted);font-size:.9rem;line-height:1.8;">
+      بعد از ارسال پیام، شماره کارت برای شما ارسال می‌شود و پس از پرداخت، پکیج تحویل داده می‌شود.
+    </p>
+  </div>
+
+  <div class="support-grid">
+    <a href="https://eitaa.com/daneshsaraye_moallemi" target="_blank" rel="noopener" class="support-card reveal">
+      <span class="ico">💜</span>
+      <h4>ایتا</h4>
+      <p>برای ثبت سفارش و پشتیبانی در ایتا پیام بدهید</p>
+      <span class="handle">@daneshsaraye_moallemi</span>
+    </a>
+    <a href="https://rubika.ir/daneshsaraye_moallemi" target="_blank" rel="noopener" class="support-card reveal">
+      <span class="ico">💚</span>
+      <h4>روبیکا</h4>
+      <p>برای ثبت سفارش و پشتیبانی در روبیکا پیام بدهید</p>
+      <span class="handle">@daneshsaraye_moallemi</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo">دانش سرای معلمی</div>
+  <div class="ftag">آکادمی امیر | فقط یک قدم مانده تا معلمی</div>
+
+  <img src="certificate.png" alt="کپی‌رایت" class="cert-img" onerror="this.style.display='none'">
+
+  <p style="opacity:.7;line-height:2">
+    تمامی حقوق مادی و معنوی این اثر متعلق به <b style="color:var(--gold-1)">دانش سرای معلمی | آکادمی امیر</b> است.<br>
+    هرگونه تکثیر یا بازنشر بدون اجازه کتبی، شرعاً و قانوناً حرام و ممنوع است.
+  </p>
+
+  <p style="margin-top:20px;opacity:.5;font-size:.76rem">© ۱۴۰۴ — تمامی حقوق محفوظ است</p>
+</footer>
+
+<a href="#support" class="float-contact" title="ارتباط سریع">💬</a>
+
+
+
+<script>
+/* ============================================
+   ⚙️ تنظیمات
+============================================ */
+const CONFIG = {
+  // --- لینک نسخه دمو (PDF رایگان) ---
+  demoLink: "#"
+};
+
+function downloadDemo(e){
+  if(!CONFIG.demoLink || CONFIG.demoLink === '#'){
+    e.preventDefault();
+    alert('لینک دمو به‌زودی در دسترس قرار می‌گیرد');
+  } else {
+    window.open(CONFIG.demoLink, '_blank');
+  }
+}
+
+/* ============================================
+   انیمیشن‌ها
+============================================ */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay = (i%3)*0.09 + 's';
+  io.observe(el);
+});
+
+const toFa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+const co = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.count, 10);
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(target/45));
+    const t = setInterval(()=>{
+      cur += step;
+      if(cur >= target){ cur = target; clearInterval(t); }
+      el.textContent = toFa(cur) + (target >= 100 ? '+' : '');
+    }, 26);
+    co.unobserve(el);
+  });
+},{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(c=>co.observe(c));
+
+window.addEventListener('scroll', ()=>{
+  const nav = document.querySelector('nav');
+  nav.style.background = window.scrollY > 40 ? 'rgba(5,11,24,.92)' : 'rgba(5,11,24,.65)';
+});
+
+window.addEventListener('mousemove', (e)=>{
+  const x = (e.clientX / window.innerWidth - .5) * 20;
+  const y = (e.clientY / window.innerHeight - .5) * 20;
+  document.querySelectorAll('.orb').forEach((o,i)=>{
+    const k = (i+1)*0.35;
+    o.style.transform = `translate(${x*k}px, ${y*k}px)`;
+  });
+});
+</script>
+</body>
+</html>
